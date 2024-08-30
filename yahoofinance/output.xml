@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0.1 (Python 3.11.6 on win32)" generated="2024-08-30T23:58:28.067214" rpa="false" schemaversion="5">
+<suite id="s1" name="Test Web Verifier" source="D:\yahoo-finance-automation\yahoofinance\tests\Test_Web_Verifier.robot">
+<test id="s1-t1" name="YAHOO-CREATE-ACCOUNT: Create Yahoo Account" line="21">
+<kw name="Setup browser" owner="page_object_base" type="SETUP">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${UI_TIMEOUT}s</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2024-08-30T23:58:28.356460" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:58:28.356460" level="INFO">Opening browser 'chrome' to base url 'https://finance.yahoo.com/'.</msg>
+<arg>${login_url}</arg>
+<arg>browser=${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-08-30T23:58:28.356460" elapsed="33.083177"/>
+</kw>
+<kw name="Run Keyword If" owner="BuiltIn">
+<kw name="Run Keyword And Return" owner="BuiltIn">
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.439637" elapsed="0.169420"/>
+</kw>
+<msg time="2024-08-30T23:59:01.609057" level="INFO">Returning from the enclosing user keyword.</msg>
+<arg>maximize browser window</arg>
+<doc>Runs the specified keyword and returns from the enclosing user keyword.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.439637" elapsed="0.169420"/>
+</kw>
+<arg>'${BROWSER}'=='headlesschrome' or '${BROWSER}'=='headlessfirefox'</arg>
+<arg>Set Window Size</arg>
+<arg>${B_WIDTH}</arg>
+<arg>${B_HEIGHT}</arg>
+<arg>ELSE</arg>
+<arg>run keyword and return</arg>
+<arg>maximize browser window</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.439637" elapsed="0.169420"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:58:28.356460" elapsed="33.252597"/>
+</kw>
+<kw name="Wait for login page" owner="page_object_home">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${logo_image}</arg>
+<arg>timeout=30</arg>
+<arg>error='home page not loaded'</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.670377" elapsed="0.157968"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:01.669201" elapsed="0.159144"/>
+</kw>
+<kw name="Click on Sign in Button" owner="page_object_home">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${sign_in_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.829633" elapsed="0.044071"/>
+</kw>
+<kw name="wait to click element" owner="page_object_base">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.873704" elapsed="0.100854"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-08-30T23:59:01.974558" elapsed="0.483706"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:02.458264" level="INFO">Clicking element '//*[@id='login-container']/a'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:02.458264" elapsed="7.669198"/>
+</kw>
+<arg>${max_waittime}</arg>
+<arg>${interval}</arg>
+<arg>click element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-08-30T23:59:02.458264" elapsed="7.669824"/>
+</kw>
+<arg>${sign_in_button}</arg>
+<status status="PASS" start="2024-08-30T23:59:01.873704" elapsed="8.254880"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:01.828345" elapsed="8.300768"/>
+</kw>
+<kw name="Wait for create account page" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${create_account_button}</arg>
+<arg>timeout=30</arg>
+<arg>error='sign up page is not visible'</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.131912" elapsed="0.020943"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:10.130919" elapsed="0.021936"/>
+</kw>
+<kw name="Click on Create Account Button" owner="page_object_create_account">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${create_account_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.152855" elapsed="0.034077"/>
+</kw>
+<kw name="wait to click element" owner="page_object_base">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.186932" elapsed="0.035184"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.222116" elapsed="0.278940"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:10.503580" level="INFO">Clicking element '//*[@id='createacc']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.503262" elapsed="0.507359"/>
+</kw>
+<arg>${max_waittime}</arg>
+<arg>${interval}</arg>
+<arg>click element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-08-30T23:59:10.502217" elapsed="0.508404"/>
+</kw>
+<arg>${create_account_button}</arg>
+<status status="PASS" start="2024-08-30T23:59:10.186932" elapsed="0.823689"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:10.152855" elapsed="0.857766"/>
+</kw>
+<kw name="Wait for create account header" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${create_account_header}</arg>
+<arg>timeout=30</arg>
+<arg>error='create account page is not visible'</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.010621" elapsed="0.079466"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:11.010621" elapsed="0.079960"/>
+</kw>
+<kw name="Enter First Name" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${fullname_label}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.091446" elapsed="0.019852"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:11.132336" level="INFO">${fname_label} = Full name</msg>
+<var>${fname_label}</var>
+<arg>${fullname_label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.111298" elapsed="0.021038"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${fname_label}</arg>
+<arg>${fullname_label_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.132875" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:11.132875" level="INFO">Typing text 'testuser1
+' into text field '//input[@id='usernamereg-firstName']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.132875" elapsed="0.271972"/>
+</kw>
+<arg>${first_name_textbox}</arg>
+<arg>${fname}</arg>
+<status status="PASS" start="2024-08-30T23:59:11.132875" elapsed="0.271972"/>
+</kw>
+<arg>${newacocunt_details['first_name']}</arg>
+<status status="PASS" start="2024-08-30T23:59:11.091214" elapsed="0.313633"/>
+</kw>
+<kw name="Enter Last Name" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${last_name_textbox}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.406662" elapsed="0.138458"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:11.545120" level="INFO">Typing text 'testlastuser1
+' into text field '//input[@id='usernamereg-lastName']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.545120" elapsed="0.298667"/>
+</kw>
+<arg>${last_name_textbox}</arg>
+<arg>${lname}</arg>
+<status status="PASS" start="2024-08-30T23:59:11.545120" elapsed="0.298667"/>
+</kw>
+<arg>${newacocunt_details['last_name']}</arg>
+<status status="PASS" start="2024-08-30T23:59:11.405488" elapsed="0.438795"/>
+</kw>
+<kw name="Enter Email Address" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${email_label}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:11.861555" elapsed="0.140977"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.032700" level="INFO">${email_address_label} = New Yahoo email</msg>
+<var>${email_address_label}</var>
+<arg>${email_label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.003655" elapsed="0.029045"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${email_address_label}</arg>
+<arg>${email_label_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.033204" elapsed="0.000000"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.033204" level="INFO">Typing text 'test+adm3
+' into text field '//input[@id='usernamereg-userId']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.033204" elapsed="0.244021"/>
+</kw>
+<arg>${email_textbox}</arg>
+<arg>${email_add}</arg>
+<status status="PASS" start="2024-08-30T23:59:12.033204" elapsed="0.244510"/>
+</kw>
+<kw name="Get Value" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.426121" level="INFO">${domain_value} = yahoo.com</msg>
+<var>${domain_value}</var>
+<arg>${domain_name}</arg>
+<doc>Returns the value attribute of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.277991" elapsed="0.148130"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${domain_value}</arg>
+<arg>${domain_name_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.426121" elapsed="0.000000"/>
+</kw>
+<arg>${newacocunt_details['email']}</arg>
+<status status="PASS" start="2024-08-30T23:59:11.860085" elapsed="0.567042"/>
+</kw>
+<kw name="Enter password" owner="page_object_create_account">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${password_field}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.435753" elapsed="0.034666"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.471413" level="INFO">Typing text 'Testuser123@
+' into text field '//input[@id='usernamereg-password']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.471413" elapsed="0.263570"/>
+</kw>
+<arg>${password_field}</arg>
+<arg>${password}</arg>
+<status status="PASS" start="2024-08-30T23:59:12.470917" elapsed="0.264563"/>
+</kw>
+<arg>${newacocunt_details['password']}</arg>
+<status status="PASS" start="2024-08-30T23:59:12.434295" elapsed="0.302222"/>
+</kw>
+<kw name="Select Month in Date of Birth" owner="page_object_create_account">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${date_of_birth_label}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.740246" elapsed="0.136242"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.922111" level="INFO">${date_of_birth_label_value} = Date of birth</msg>
+<var>${date_of_birth_label_value}</var>
+<arg>${date_of_birth_label}</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.876488" elapsed="0.045623"/>
+</kw>
+<kw name="Should Be Equal As Strings" owner="BuiltIn">
+<arg>${date_of_birth_label_value}</arg>
+<arg>${dob_value}</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.922111" elapsed="0.000000"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:12.922111" level="INFO">Clicking element '//select[@id='usernamereg-month']'.</msg>
+<arg>${select_month_dob}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:12.922111" elapsed="0.088526"/>
+</kw>
+<kw name="Select From List By Label" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:13.012362" level="INFO">Selecting options from selection list '//select[@id='usernamereg-month']' by label May.</msg>
+<arg>${select_month_dob}</arg>
+<arg>${month}</arg>
+<doc>Selects options from selection list ``locator`` by ``labels``.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.011646" elapsed="0.086470"/>
+</kw>
+<arg>${Month}</arg>
+<status status="PASS" start="2024-08-30T23:59:12.740246" elapsed="0.357870"/>
+</kw>
+<kw name="Enter Date in Date of Birth" owner="page_object_create_account">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${day_dob_textbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.100071" elapsed="0.030274"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:13.131368" level="INFO">Typing text '11
+' into text field '//input[@id='usernamereg-day']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.130345" elapsed="0.223373"/>
+</kw>
+<arg>${day_dob_textbox}</arg>
+<arg>${date}</arg>
+<status status="PASS" start="2024-08-30T23:59:13.130345" elapsed="0.223373"/>
+</kw>
+<arg>${Date}</arg>
+<status status="PASS" start="2024-08-30T23:59:13.099079" elapsed="0.254639"/>
+</kw>
+<kw name="Enter Year in Date of Birth" owner="page_object_create_account">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${year_dob_textbox}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.356399" elapsed="0.141555"/>
+</kw>
+<kw name="Enter Input Text" owner="page_object_base">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:13.498965" level="INFO">Typing text '1986
+' into text field '//input[@id='usernamereg-year']'.</msg>
+<arg>${xpath}</arg>
+<arg>${value}${\n}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.497954" elapsed="0.257222"/>
+</kw>
+<arg>${year_dob_textbox}</arg>
+<arg>${year}</arg>
+<status status="PASS" start="2024-08-30T23:59:13.497954" elapsed="0.257719"/>
+</kw>
+<arg>${Year}</arg>
+<status status="PASS" start="2024-08-30T23:59:13.355903" elapsed="0.399770"/>
+</kw>
+<kw name="Click on Next Button" owner="page_object_create_account">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${next_button}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.758227" elapsed="0.137899"/>
+</kw>
+<kw name="wait to click element" owner="page_object_base">
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.896126" elapsed="0.033311"/>
+</kw>
+<kw name="Scroll Element Into View" owner="SeleniumLibrary">
+<arg>${locator}</arg>
+<doc>Scrolls the element identified by ``locator`` into view.</doc>
+<status status="PASS" start="2024-08-30T23:59:13.929437" elapsed="0.291343"/>
+</kw>
+<kw name="Wait Until Keyword Succeeds" owner="BuiltIn">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-08-30T23:59:14.220780" level="INFO">Clicking element '//button[@id='reg-submit-button']'.</msg>
+<arg>${locator}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-08-30T23:59:14.220780" elapsed="0.251817"/>
+</kw>
+<arg>${max_waittime}</arg>
+<arg>${interval}</arg>
+<arg>click element</arg>
+<arg>${locator}</arg>
+<doc>Runs the specified keyword and retries if it fails.</doc>
+<status status="PASS" start="2024-08-30T23:59:14.220780" elapsed="0.251817"/>
+</kw>
+<arg>${next_button}</arg>
+<status status="PASS" start="2024-08-30T23:59:13.896126" elapsed="0.576471"/>
+</kw>
+<status status="PASS" start="2024-08-30T23:59:13.756196" elapsed="0.716401"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-08-30T23:59:14.475568" elapsed="2.245807"/>
+</kw>
+<tag>Create_accunt</tag>
+<tag>Regression</tag>
+<status status="PASS" start="2024-08-30T23:58:28.340561" elapsed="48.382832"/>
+</test>
+<status status="PASS" start="2024-08-30T23:58:28.069094" elapsed="48.654299"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">Create_accunt</stat>
+<stat pass="1" fail="0" skip="0">Regression</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Test Web Verifier">Test Web Verifier</stat>
+</suite>
+</statistics>
+<errors>
+<msg time="2024-08-30T23:58:28.057788" level="WARN">Error in file 'D:\yahoo-finance-automation\yahoofinance\tests\Test_Web_Verifier.robot' on line 20: Singular section headers like '*** Test Case ***' are deprecated. Use plural format like '*** Test Cases ***' instead.</msg>
+<msg time="2024-08-30T23:58:28.340561" level="ERROR">Error in file 'D:\yahoo-finance-automation\yahoofinance\resources\yahoofinance_web\page_object_base.robot' on line 5: Invalid resource file extension '.py'. Supported extensions are '.json', '.resource', '.rest', '.robot', '.rsrc', '.rst', '.tsv' and '.txt'.</msg>
+</errors>
+</robot>
