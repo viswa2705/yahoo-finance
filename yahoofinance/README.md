@@ -1,5 +1,4 @@
-# castandcrew-automation
-Integration automation for the start+ ui and api's using Robot Framework
+# Yahoo Finance-automation
 
 ## First Time Setup
 ### Software used
